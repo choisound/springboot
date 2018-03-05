@@ -1,17 +1,16 @@
 package com.cyx.service.impl;
 
-import com.cyx.dao.UserMapper;
+import com.cyx.dao.UserDao;
 import com.cyx.domain.User;
-import com.cyx.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService implements IUserService {
+public class UserServiceImpl implements com.cyx.service.UserService {
     @Autowired
-    UserMapper userMapper;
+    UserDao userDao;
     @Override
     public int insertUser(User user) {
-        return userMapper.insertUser(user);
+        return userDao.insertUser(user);
     }
 }
