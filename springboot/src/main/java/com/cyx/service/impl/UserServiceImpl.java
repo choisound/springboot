@@ -13,4 +13,9 @@ public class UserServiceImpl implements com.cyx.service.UserService {
     public int insertUser(User user) {
         return userDao.insertUser(user);
     }
+
+    @Override
+    public User selectUser(String name, String password) {
+        return userDao.selectUser(name,password);
+    }
 }
