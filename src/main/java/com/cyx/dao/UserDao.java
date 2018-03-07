@@ -10,13 +10,8 @@ import org.springframework.stereotype.Repository;
 @Mapper
 @Repository
 public interface UserDao {
-    /*
-     * 插入数据到数据库
-     * @param user 用户的pojo类
-     * */
-    @Insert("insert into user(name,sex,password) values (#{name}, #{sex}, #{password})")
+    @Insert("insert into usersupport_user(work_number,username,password,email,phone,gmt_create,status)VALUES(#{workNumber},#{username},#{password},#{email},#{phone},#{gmtCreate},#{status})")
     int insertUser(User user);
-
-    @Select("SELECT * FROM `user` where user.name=#{name} and user.password = #{password}")
-    User selectUser(@Param("name") String username, @Param("password") String password);
+    @Select("select * from usersupport_user where username = #{username}")
+    User findByName(@Param("username") String username);
 }

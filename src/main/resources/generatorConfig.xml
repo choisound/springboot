@@ -8,7 +8,7 @@
     <properties resource="application.yml"/>
     <!-- mysql驱动的位置 这个是MySQL连接的jar包，你需要指定你自己计算机上的jar包的位置-->
     <classPathEntry
-            location="C:\Users\常伟\.m2\repository\mysql\mysql-connector-java\5.1.45\mysql-connector-java-5.1.45.jar"/>
+            location="D:\software\maven\mvnRespo\mysql\mysql-connector-java\5.1.38\mysql-connector-java-5.1.38.jar"/>
 
     <context id="Tables" targetRuntime="MyBatis3">
 
@@ -61,8 +61,24 @@
         <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample
             是否生成 example类 -->
 
-        <table schema="springboot" tableName="user"
+        <table schema="springboot" tableName="usersupport_user"
                domainObjectName="User" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false"/>
+        <table schema="springboot" tableName="role_menu"
+               domainObjectName="RoleMenu" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false"/>
+        <table schema="springboot" tableName="role"
+               domainObjectName="Role" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false"/>
+        <table schema="springboot" tableName="menu"
+               domainObjectName="Menu" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               enableUpdateByExample="false"/>
+        <table schema="springboot" tableName="user_role"
+               domainObjectName="UserRole" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                enableUpdateByExample="false">
         </table>
