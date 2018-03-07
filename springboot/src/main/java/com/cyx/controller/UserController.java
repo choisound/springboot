@@ -15,25 +15,27 @@ public class UserController {
 
     @PostMapping("/resiger")
     @ResponseBody
-    public String resiger(User user){
+    public String resiger(User user) {
         int row = userService.insertUser(user);
-        if(row>0){
+        if (row > 0) {
             return "插入成功";
         }
         return "插入失败";
     }
+
     @GetMapping("/hello")
-    public String hello(){
+    public String hello() {
         System.out.println("Hello");
         return "hello";
     }
+
     @PostMapping("/login")
- //   @GetMapping("/login")
-    public RespData login(User user){
+    //   @GetMapping("/login")
+    public RespData login(User user) {
         System.out.println(user.getName());
         System.out.println(user.getPassword());
-        User respuser=userService.selectUser(user.getName(),user.getPassword());
-        if(respuser == null){
+        User respuser = userService.selectUser(user.getName(), user.getPassword());
+        if (respuser == null) {
             return new RespData("登录失败", RespCode.FAIL.getCode(), respuser);
         }
         return new RespData("登录成功", RespCode.SUCCESS.getCode(), respuser);

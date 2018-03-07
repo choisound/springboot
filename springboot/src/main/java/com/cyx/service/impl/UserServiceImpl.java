@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements com.cyx.service.UserService {
     @Autowired
     UserDao userDao;
+
     @Override
     public int insertUser(User user) {
         return userDao.insertUser(user);
@@ -16,6 +17,6 @@ public class UserServiceImpl implements com.cyx.service.UserService {
 
     @Override
     public User selectUser(String name, String password) {
-        return userDao.selectUser(name,password);
+        return userDao.selectUser(name, password);
     }
 }

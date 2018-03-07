@@ -11,12 +11,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao {
     /*
-    * 插入数据到数据库
-    * @param user 用户的pojo类
-    * */
+     * 插入数据到数据库
+     * @param user 用户的pojo类
+     * */
     @Insert("insert into user(name,sex,password) values (#{name}, #{sex}, #{password})")
     int insertUser(User user);
 
     @Select("SELECT * FROM `user` where user.name=#{name} and user.password = #{password}")
-    User selectUser(@Param("name")String username,@Param("password") String password);
+    User selectUser(@Param("name") String username, @Param("password") String password);
 }

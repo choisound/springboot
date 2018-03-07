@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script  src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
     <!--<script type="text/javascript" src="/webjars/jquery/1.11.3/jquery.js"></script>-->
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,7 +12,7 @@
                 var password = $("#password").val();
                 console.log(username);
                 console.log(password);
-                login("http://localhost:8080/user/login",{name:username,password:password});
+                login("http://localhost:8080/user/login", {name: username, password: password});
             });
         });
         var login = function (url, json) {
@@ -21,40 +21,40 @@
                 type: 'POST',
                 dataType: 'json',
                 data: json,
-            }).done(function(data) {
+            }).done(function (data) {
                 // console.log(data);
-                    // console.log(data.code);
-                    // if(data.code == 0){
-                    //     alert(JSON.stringify(data));
-                    //     console.log(data);
-                    //     alert("获取数据成功");
-                    // }else{
-                    //     alert(data.msg);
-                    // }
-                })
-                .fail(function() {
+                // console.log(data.code);
+                // if(data.code == 0){
+                //     alert(JSON.stringify(data));
+                //     console.log(data);
+                //     alert("获取数据成功");
+                // }else{
+                //     alert(data.msg);
+                // }
+            })
+                .fail(function () {
                     console.log("error");
                 });
         }
     </script>
 </head>
 <body>
-    <form>
+<form>
+    <div>
+        <label>Username</label>
         <div>
-            <label>Username</label>
-            <div >
-                <input id="username" placeholder="Must be atleast 4 chars long">
-            </div>
+            <input id="username" placeholder="Must be atleast 4 chars long">
         </div>
-        <div >
-            <label >Password</label>
-            <div >
-                <input type="password" id="password"  placeholder="Atleast 6 chars long">
-            </div>
+    </div>
+    <div>
+        <label>Password</label>
+        <div>
+            <input type="password" id="password" placeholder="Atleast 6 chars long">
         </div>
-        <div class="clearfix">
-            <button type="button" id="submitData">submit</button>
-        </div>
-    </form>
+    </div>
+    <div class="clearfix">
+        <button type="button" id="submitData">submit</button>
+    </div>
+</form>
 </body>
 </html>
